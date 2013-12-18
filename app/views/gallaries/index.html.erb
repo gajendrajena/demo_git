@@ -1,0 +1,29 @@
+<h1>Listing gallaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gallaries.each do |gallary| %>
+      <tr>
+        <td><%= gallary.name %></td>
+        <td><%= gallary.description %></td>
+        <td><%= link_to 'Show', gallary %></td>
+        <td><%= link_to 'Edit', edit_gallary_path(gallary) %></td>
+        <td><%= link_to 'Destroy', gallary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gallary', new_gallary_path %>
