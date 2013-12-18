@@ -1,4 +1,6 @@
 DemoGit::Application.routes.draw do
+  resources :gallaries
+
   resources :categories
 
   resources :products
